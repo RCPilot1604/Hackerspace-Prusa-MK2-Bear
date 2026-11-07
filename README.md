@@ -124,7 +124,9 @@ The steps below cover **unloading after a finished print**.
 
 1. Check that the build surface is seated and free of scraps. Clean it according to that surface's instructions; check before using a scraper or solvent.
 2. Choose the filament preset for the loaded spool. Orient the model, add supports or a brim if needed, slice, and inspect the preview for off-bed geometry, missing supports, and the first layer.
-3. Export `.gcode`, safely eject the drive from the computer, and insert it into the printer. Use **Change Media** or **Attach USB Drive** if the file list does not refresh.
+3. Remove the USB Drive from the back of the printer (it is a long stick, super obvious!) and insert it into your PC.
+4. Export `.gcode`, safely eject the drive from the computer, and insert it back into the printer (the same way you removed it).
+5. Use **Change Media** or **Attach USB Drive** if the file list does not refresh.
 
 > [!NOTE]
 > This guide covers the operation of **this printer**. For general OrcaSlicer instructions, including slicing `.stl` or `.3mf` models into `.gcode`, consult an OrcaSlicer guide.
