@@ -20,8 +20,6 @@
  *
  */
 #pragma once
-#define HEATER_0_PIN P2_05
-#define HEATER_BED_PIN P2_07 //swap heater and bed MOSFET pins
 /**
  * Configuration.h
  *
@@ -89,7 +87,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_BTT_SKR_V1_4
+  #define MOTHERBOARD BOARD_MKS_ROBIN_NANO_V3_1
 #endif
 
 // @section serial
@@ -124,8 +122,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT_2 0
-//#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+#define SERIAL_PORT_2 2
+#define BAUDRATE_2 115200   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -687,9 +685,9 @@
     #define DEFAULT_KI_LIST {   1.08,   1.08 }
     #define DEFAULT_KD_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_KP 31.20
-    #define DEFAULT_KI 4.37
-    #define DEFAULT_KD 55.62
+    #define DEFAULT_KP 36.30
+    #define DEFAULT_KI 5.89
+    #define DEFAULT_KD 55.90
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -776,9 +774,10 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_BED_KP 108.20
-  #define DEFAULT_BED_KI 21.62
-  #define DEFAULT_BED_KD 361.01
+  #define DEFAULT_BED_KP 91.99
+  #define DEFAULT_BED_KI 17.97
+  #define DEFAULT_BED_KD 314.00
+
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
@@ -2495,7 +2494,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-#define SDSUPPORT
+ #define SDSUPPORT
 
 // Creality V4 board LCD connector variant: RET6 (STM32F103RC) or VET6 (STM32F103VE)
 // Required when CR10_STOCKDISPLAY is used with BOARD_CREALITY_V4.
